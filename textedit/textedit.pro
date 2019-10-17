@@ -5,8 +5,10 @@ qtHaveModule(printsupport): QT += printsupport
 TEMPLATE        = app
 TARGET          = textedit
 
-HEADERS         = textedit.h
+HEADERS         = textedit.h \
+    loginDialog.h
 SOURCES         = textedit.cpp \
+                  loginDialog.cpp \
                   main.cpp
 
 RESOURCES += textedit.qrc

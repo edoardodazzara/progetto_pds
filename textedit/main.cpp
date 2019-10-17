@@ -60,8 +60,8 @@ int main(int argc, char *argv[])
     Q_INIT_RESOURCE(textedit);
 
     QApplication a(argc, argv);
-    QCoreApplication::setOrganizationName("QtProject");
-    QCoreApplication::setApplicationName("Rich Text");
+    QCoreApplication::setOrganizationName("PDS Project");
+    QCoreApplication::setApplicationName("Collaborative Text Editor");
     QCoreApplication::setApplicationVersion(QT_VERSION_STR);
     QCommandLineParser parser;
     parser.setApplicationDescription(QCoreApplication::applicationName());
