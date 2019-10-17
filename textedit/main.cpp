@@ -77,8 +77,7 @@ int main(int argc, char *argv[])
     mw.move((availableGeometry.width() - mw.width()) / 2,
             (availableGeometry.height() - mw.height()) / 2);
 
-    if (!mw.load(parser.positionalArguments().value(0, QLatin1String(":/example.html"))))
-        mw.fileNew();
+    mw.fileNew();
 
     mw.show();
     return a.exec();
