@@ -13,7 +13,7 @@ public:
     loginDialog(QWidget *parent = 0);
 
 private slots:
-    void loginClicked(QString name, QString pass);
+    void loginClicked();
     void cancelClicked();
     void enableLoginButton(const QString &text);
 
@@ -24,6 +24,7 @@ private:
     QLineEdit *passwordEdit;
     QPushButton *loginButton;
     QPushButton *cancelButton;
+    QPushButton *hiddenButton;
 
 };
 

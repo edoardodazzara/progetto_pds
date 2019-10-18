@@ -76,6 +76,7 @@ public:
 
 public slots:
     void fileNew();
+    void successfulLogin();
 
 protected:
     void closeEvent(QCloseEvent *e) override;

@@ -85,6 +85,7 @@
 #endif
 
 #include "textedit.h"
+#include "loginDialog.h"
 
 #ifdef Q_OS_MAC
 const QString rsrcPath = ":/images/mac";
@@ -148,7 +149,6 @@ TextEdit::TextEdit(QWidget *parent)
     connect(QApplication::clipboard(), &QClipboard::dataChanged, this, &TextEdit::clipboardDataChanged);
 #endif
 
-    textEdit->setFocus();
     setCurrentFileName(QString());
 
 #ifdef Q_OS_MACOS
@@ -776,3 +776,7 @@ void TextEdit::alignmentChanged(Qt::Alignment a)
         actionAlignJustify->setChecked(true);
 }
 
+void TextEdit::successfulLogin(){
+    setEnabled(true);
+    setFocus();
+}

@@ -82,7 +82,9 @@ int main(int argc, char *argv[])
     mw.fileNew();
 
     mw.setEnabled(false);
+    mw.setWindowFlags(Qt::CustomizeWindowHint | Qt::WindowTitleHint);
     mw.show();
     ld.show();
+
     return a.exec();
 }
