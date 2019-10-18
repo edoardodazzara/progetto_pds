@@ -12,12 +12,8 @@ class loginDialog : public QDialog{
 public:
     loginDialog(QWidget *parent = 0);
 
-signals:
-    void login();
-    void noLogin();
-
 private slots:
-    void loginClicked();
+    void loginClicked(QString name, QString pass);
     void cancelClicked();
     void enableLoginButton(const QString &text);
 

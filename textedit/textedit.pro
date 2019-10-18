@@ -6,10 +6,12 @@ TEMPLATE        = app
 TARGET          = textedit
 
 HEADERS         = textedit.h \
-    loginDialog.h
+    loginDialog.h \
+    widgetcontainer.h
 SOURCES         = textedit.cpp \
                   loginDialog.cpp \
-                  main.cpp
+                  main.cpp \
+                  widgetcontainer.cpp
 
 RESOURCES += textedit.qrc
 build_all:!build_pass {
