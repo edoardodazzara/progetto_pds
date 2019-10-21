@@ -20,6 +20,7 @@ loginDialog::loginDialog(QWidget *parent)
     QDialogButtonBox *buttonBox = new QDialogButtonBox(Qt::Horizontal);
     buttonBox->addButton(loginButton, QDialogButtonBox::ActionRole);
     buttonBox->addButton(cancelButton, QDialogButtonBox::ActionRole);
+    setModal(true);
 
     connect(usernameEdit, SIGNAL(textChanged(const QString &)),
             this, SLOT(enableLoginButton(const QString &)));
@@ -29,8 +30,6 @@ loginDialog::loginDialog(QWidget *parent)
             this, SLOT(loginClicked()));
     connect(cancelButton, SIGNAL(clicked()),
             this, SLOT(cancelClicked()));
-    connect(hiddenButton, SIGNAL(clicked()),
-            parent, SLOT(successfulLogin()));
 
     QFormLayout *loginForm = new QFormLayout;
     loginForm->addRow(username, usernameEdit);
@@ -47,7 +46,10 @@ void loginDialog::loginClicked(){
     QString password = passwordEdit->text();
     //Implement interface to send data to server
     if(true)
-        hiddenButton->clicked(true);
+    {
+        emit loginSuccessful();
+        close();
+    }
     else
         return;
 }
@@ -59,3 +61,4 @@ void loginDialog::cancelClicked(){
 void loginDialog::enableLoginButton(const QString &text){
     loginButton->setEnabled(!text.isEmpty());
 }
+

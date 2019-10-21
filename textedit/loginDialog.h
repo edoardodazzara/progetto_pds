@@ -17,6 +17,10 @@ private slots:
     void cancelClicked();
     void enableLoginButton(const QString &text);
 
+signals:
+    void loginSuccessful();
+
+
 private:
     QLabel *username;
     QLabel *password;

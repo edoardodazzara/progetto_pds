@@ -60,6 +60,7 @@ int main(int argc, char *argv[])
 {
     Q_INIT_RESOURCE(textedit);
 
+
     QApplication a(argc, argv);
     QCoreApplication::setOrganizationName("PDS Project");
     QCoreApplication::setApplicationName("Collaborative Text Editor");
@@ -74,6 +75,8 @@ int main(int argc, char *argv[])
     TextEdit mw;
     loginDialog ld;
 
+    QObject::connect(&ld, SIGNAL(loginSuccessful()), &mw, SLOT(successfulLogin()));
+
     const QRect availableGeometry = QApplication::desktop()->availableGeometry(&mw);
     mw.resize(availableGeometry.width() / 2, (availableGeometry.height() * 2) / 3);
     mw.move((availableGeometry.width() - mw.width()) / 2,
@@ -82,7 +85,6 @@ int main(int argc, char *argv[])
     mw.fileNew();
 
     mw.setEnabled(false);
-    mw.setWindowFlags(Qt::CustomizeWindowHint | Qt::WindowTitleHint);
     mw.show();
     ld.show();
 
