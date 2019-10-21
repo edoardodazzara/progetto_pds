@@ -16,7 +16,9 @@ loginDialog::loginDialog(QWidget *parent)
     loginButton->setDefault(true);
     loginButton->setEnabled(false);
     cancelButton = new QPushButton(tr("&Cancel"));
-    hiddenButton = new QPushButton(tr("&Invisible"));
+    newProfileButton = new QPushButton(tr("&Create a new profile"));
+    newProfileButton->setFlat(true);
+    newProfileButton->setStyleSheet("QPushButton {color: #0000FF;}");
     QDialogButtonBox *buttonBox = new QDialogButtonBox(Qt::Horizontal);
     buttonBox->addButton(loginButton, QDialogButtonBox::ActionRole);
     buttonBox->addButton(cancelButton, QDialogButtonBox::ActionRole);
@@ -35,12 +37,12 @@ loginDialog::loginDialog(QWidget *parent)
     loginForm->addRow(username, usernameEdit);
     loginForm->addRow(password, passwordEdit);
     loginForm->addWidget(buttonBox);
+    loginForm->addWidget(newProfileButton);
     setLayout(loginForm);
     setFixedSize(sizeHint());
     setWindowFlags(Qt::CustomizeWindowHint | Qt::WindowTitleHint);
 }
-//TODO
-//SET WIDGET PARENT
+
 void loginDialog::loginClicked(){
     QString username = usernameEdit->text();
     QString password = passwordEdit->text();

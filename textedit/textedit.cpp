@@ -86,6 +86,7 @@
 
 #include "textedit.h"
 #include "loginDialog.h"
+#include "editprofile.h"
 
 #ifdef Q_OS_MAC
 const QString rsrcPath = ":/images/mac";
@@ -214,6 +215,12 @@ void TextEdit::setupFileActions()
 
     menu->addSeparator();
 #endif
+
+    const QIcon editProfileIcon = QIcon::fromTheme("editProfile", QIcon(rsrcPath + "/colored-edit-profile.png"));
+    a = menu->addAction(editProfileIcon, tr("Edit Profile"));
+    a->setPriority(QAction::LowPriority);
+
+    menu->addSeparator();
 
     a = menu->addAction(tr("&Quit"), this, &QWidget::close);
     a->setShortcut(Qt::CTRL + Qt::Key_Q);
