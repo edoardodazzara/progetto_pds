@@ -43,10 +43,10 @@ RM = /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/Lorenzo/Desktop/PROGETTO
+CMAKE_SOURCE_DIR = /Users/Lorenzo/Desktop/progetto_pds/SERVER
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/Lorenzo/Desktop/PROGETTO/cmake-build-debug
+CMAKE_BINARY_DIR = /Users/Lorenzo/Desktop/progetto_pds/SERVER/cmake-build-debug
 
 # Include any dependencies generated for this target.
 include CMakeFiles/PROGETTO.dir/depend.make
@@ -59,42 +59,42 @@ include CMakeFiles/PROGETTO.dir/flags.make
 
 CMakeFiles/PROGETTO.dir/main.cpp.o: CMakeFiles/PROGETTO.dir/flags.make
 CMakeFiles/PROGETTO.dir/main.cpp.o: ../main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/Lorenzo/Desktop/PROGETTO/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/PROGETTO.dir/main.cpp.o"
-	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/PROGETTO.dir/main.cpp.o -c /Users/Lorenzo/Desktop/PROGETTO/main.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/Lorenzo/Desktop/progetto_pds/SERVER/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/PROGETTO.dir/main.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/PROGETTO.dir/main.cpp.o -c /Users/Lorenzo/Desktop/progetto_pds/SERVER/main.cpp
 
 CMakeFiles/PROGETTO.dir/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/PROGETTO.dir/main.cpp.i"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/Lorenzo/Desktop/PROGETTO/main.cpp > CMakeFiles/PROGETTO.dir/main.cpp.i
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/Lorenzo/Desktop/progetto_pds/SERVER/main.cpp > CMakeFiles/PROGETTO.dir/main.cpp.i
 
 CMakeFiles/PROGETTO.dir/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/PROGETTO.dir/main.cpp.s"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/Lorenzo/Desktop/PROGETTO/main.cpp -o CMakeFiles/PROGETTO.dir/main.cpp.s
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/Lorenzo/Desktop/progetto_pds/SERVER/main.cpp -o CMakeFiles/PROGETTO.dir/main.cpp.s
 
 CMakeFiles/PROGETTO.dir/CRDT.cpp.o: CMakeFiles/PROGETTO.dir/flags.make
 CMakeFiles/PROGETTO.dir/CRDT.cpp.o: ../CRDT.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/Lorenzo/Desktop/PROGETTO/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/PROGETTO.dir/CRDT.cpp.o"
-	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/PROGETTO.dir/CRDT.cpp.o -c /Users/Lorenzo/Desktop/PROGETTO/CRDT.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/Lorenzo/Desktop/progetto_pds/SERVER/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/PROGETTO.dir/CRDT.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/PROGETTO.dir/CRDT.cpp.o -c /Users/Lorenzo/Desktop/progetto_pds/SERVER/CRDT.cpp
 
 CMakeFiles/PROGETTO.dir/CRDT.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/PROGETTO.dir/CRDT.cpp.i"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/Lorenzo/Desktop/PROGETTO/CRDT.cpp > CMakeFiles/PROGETTO.dir/CRDT.cpp.i
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/Lorenzo/Desktop/progetto_pds/SERVER/CRDT.cpp > CMakeFiles/PROGETTO.dir/CRDT.cpp.i
 
 CMakeFiles/PROGETTO.dir/CRDT.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/PROGETTO.dir/CRDT.cpp.s"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/Lorenzo/Desktop/PROGETTO/CRDT.cpp -o CMakeFiles/PROGETTO.dir/CRDT.cpp.s
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/Lorenzo/Desktop/progetto_pds/SERVER/CRDT.cpp -o CMakeFiles/PROGETTO.dir/CRDT.cpp.s
 
 CMakeFiles/PROGETTO.dir/Char.cpp.o: CMakeFiles/PROGETTO.dir/flags.make
 CMakeFiles/PROGETTO.dir/Char.cpp.o: ../Char.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/Lorenzo/Desktop/PROGETTO/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/PROGETTO.dir/Char.cpp.o"
-	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/PROGETTO.dir/Char.cpp.o -c /Users/Lorenzo/Desktop/PROGETTO/Char.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/Lorenzo/Desktop/progetto_pds/SERVER/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/PROGETTO.dir/Char.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/PROGETTO.dir/Char.cpp.o -c /Users/Lorenzo/Desktop/progetto_pds/SERVER/Char.cpp
 
 CMakeFiles/PROGETTO.dir/Char.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/PROGETTO.dir/Char.cpp.i"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/Lorenzo/Desktop/PROGETTO/Char.cpp > CMakeFiles/PROGETTO.dir/Char.cpp.i
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/Lorenzo/Desktop/progetto_pds/SERVER/Char.cpp > CMakeFiles/PROGETTO.dir/Char.cpp.i
 
 CMakeFiles/PROGETTO.dir/Char.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/PROGETTO.dir/Char.cpp.s"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/Lorenzo/Desktop/PROGETTO/Char.cpp -o CMakeFiles/PROGETTO.dir/Char.cpp.s
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/Lorenzo/Desktop/progetto_pds/SERVER/Char.cpp -o CMakeFiles/PROGETTO.dir/Char.cpp.s
 
 # Object files for target PROGETTO
 PROGETTO_OBJECTS = \
@@ -110,7 +110,7 @@ PROGETTO: CMakeFiles/PROGETTO.dir/CRDT.cpp.o
 PROGETTO: CMakeFiles/PROGETTO.dir/Char.cpp.o
 PROGETTO: CMakeFiles/PROGETTO.dir/build.make
 PROGETTO: CMakeFiles/PROGETTO.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/Lorenzo/Desktop/PROGETTO/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX executable PROGETTO"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/Lorenzo/Desktop/progetto_pds/SERVER/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX executable PROGETTO"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/PROGETTO.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -123,6 +123,6 @@ CMakeFiles/PROGETTO.dir/clean:
 .PHONY : CMakeFiles/PROGETTO.dir/clean
 
 CMakeFiles/PROGETTO.dir/depend:
-	cd /Users/Lorenzo/Desktop/PROGETTO/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/Lorenzo/Desktop/PROGETTO /Users/Lorenzo/Desktop/PROGETTO /Users/Lorenzo/Desktop/PROGETTO/cmake-build-debug /Users/Lorenzo/Desktop/PROGETTO/cmake-build-debug /Users/Lorenzo/Desktop/PROGETTO/cmake-build-debug/CMakeFiles/PROGETTO.dir/DependInfo.cmake --color=$(COLOR)
+	cd /Users/Lorenzo/Desktop/progetto_pds/SERVER/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/Lorenzo/Desktop/progetto_pds/SERVER /Users/Lorenzo/Desktop/progetto_pds/SERVER /Users/Lorenzo/Desktop/progetto_pds/SERVER/cmake-build-debug /Users/Lorenzo/Desktop/progetto_pds/SERVER/cmake-build-debug /Users/Lorenzo/Desktop/progetto_pds/SERVER/cmake-build-debug/CMakeFiles/PROGETTO.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/PROGETTO.dir/depend
 

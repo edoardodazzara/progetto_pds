@@ -4,9 +4,9 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/Users/Lorenzo/Desktop/PROGETTO/CRDT.cpp" "/Users/Lorenzo/Desktop/PROGETTO/cmake-build-debug/CMakeFiles/PROGETTO.dir/CRDT.cpp.o"
-  "/Users/Lorenzo/Desktop/PROGETTO/Char.cpp" "/Users/Lorenzo/Desktop/PROGETTO/cmake-build-debug/CMakeFiles/PROGETTO.dir/Char.cpp.o"
-  "/Users/Lorenzo/Desktop/PROGETTO/main.cpp" "/Users/Lorenzo/Desktop/PROGETTO/cmake-build-debug/CMakeFiles/PROGETTO.dir/main.cpp.o"
+  "/Users/Lorenzo/Desktop/progetto_pds/SERVER/CRDT.cpp" "/Users/Lorenzo/Desktop/progetto_pds/SERVER/cmake-build-debug/CMakeFiles/PROGETTO.dir/CRDT.cpp.o"
+  "/Users/Lorenzo/Desktop/progetto_pds/SERVER/Char.cpp" "/Users/Lorenzo/Desktop/progetto_pds/SERVER/cmake-build-debug/CMakeFiles/PROGETTO.dir/Char.cpp.o"
+  "/Users/Lorenzo/Desktop/progetto_pds/SERVER/main.cpp" "/Users/Lorenzo/Desktop/progetto_pds/SERVER/cmake-build-debug/CMakeFiles/PROGETTO.dir/main.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "AppleClang")
 

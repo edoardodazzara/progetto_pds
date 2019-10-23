@@ -6,18 +6,19 @@
 #define PROGETTO_CHAR_H
 
 
-#include <list>
+#include <vector>
 
 class Char {
 
 private:
     int siteId;
     int counter;
-    std::list<int> position;
+    std::vector<int> position;
     char value;
 
 public:
-    Char(int siteId, int counter, std::list<int> position, char value);
+    Char(int siteId, int counter, std::vector<int> position, char value);
+    int compareTo(Char other);
 };
 
 

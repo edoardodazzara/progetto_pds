@@ -1,0 +1,16 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/Lorenzo/Desktop/progetto_pds/SERVER/Char.cpp
+Char.h
+/Users/Lorenzo/Desktop/progetto_pds/SERVER/Char.h
+
+/Users/Lorenzo/Desktop/progetto_pds/SERVER/Char.h
+vector
+-
+
