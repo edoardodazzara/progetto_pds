@@ -6,9 +6,11 @@ TEMPLATE        = app
 TARGET          = textedit
 
 HEADERS         = textedit.h \
+    clickablelabel.h \
     editprofile.h \
     loginDialog.h
 SOURCES         = textedit.cpp \
+                  clickablelabel.cpp \
                   editprofile.cpp \
                   loginDialog.cpp \
                   main.cpp

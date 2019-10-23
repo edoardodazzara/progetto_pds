@@ -217,7 +217,7 @@ void TextEdit::setupFileActions()
 #endif
 
     const QIcon editProfileIcon = QIcon::fromTheme("editProfile", QIcon(rsrcPath + "/colored-edit-profile.png"));
-    a = menu->addAction(editProfileIcon, tr("Edit Profile"));
+    a = menu->addAction(editProfileIcon, tr("Edit Profile"), this, &TextEdit::launchProfileEditor);
     a->setPriority(QAction::LowPriority);
 
     menu->addSeparator();
@@ -786,4 +786,9 @@ void TextEdit::alignmentChanged(Qt::Alignment a)
 void TextEdit::successfulLogin(){
     setEnabled(true);
     setFocus();
+}
+
+void TextEdit::launchProfileEditor(){
+    profile = new editProfile();
+    profile->show();
 }

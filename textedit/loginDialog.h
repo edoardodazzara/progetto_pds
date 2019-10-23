@@ -2,6 +2,7 @@
 #define LOGINDIAG_H
 
 #include <QDialog>
+#include <QVBoxLayout>
 
 class QLabel;
 class QLineEdit;

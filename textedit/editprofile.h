@@ -7,9 +7,18 @@
 #include <QLineEdit>
 #include <QPushButton>
 #include <QPixmap>
+#include <QVBoxLayout>
+#include <QFormLayout>
 #include <QFileInfo>
 #include <QFile>
+#include <QHoverEvent>
+#include <QFileDialog>
+#include <QStandardPaths>
 #include <QDialogButtonBox>
+#include <QTextStream>
+#include <QMessageBox>
+
+#include "clickablelabel.h"
 
 class editProfile:public QDialog
 {
@@ -24,8 +33,10 @@ private slots:
 \
 
 private:
+    const QString rsrc = ":/images/win";
     QLabel *nickname;
     QLabel *username;
+    ClickableLabel *userPic;
     QPixmap *profilePic;
     QLineEdit *usernameEdit;
     QLineEdit *nickEdit;

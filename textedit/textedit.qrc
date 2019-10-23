@@ -40,6 +40,6 @@
         <file>images/win/zoomin.png</file>
         <file>images/win/zoomout.png</file>
         <file>images/win/colored-edit-profile.png</file>
-        <file>images/win/material-black-edit-profile.png</file>
+        <file>images/win/profile-empty-pic.png</file>
     </qresource>
 </RCC>

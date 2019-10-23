@@ -54,6 +54,7 @@
 #include <QMainWindow>
 #include <QMap>
 #include <QPointer>
+#include "editprofile.h"
 
 QT_BEGIN_NAMESPACE
 class QAction;
@@ -111,7 +112,7 @@ private:
     void setupTextActions();
     bool maybeSave();
     void setCurrentFileName(const QString &fileName);
-
+    void launchProfileEditor();
     void mergeFormatOnWordOrSelection(const QTextCharFormat &format);
     void fontChanged(const QFont &f);
     void colorChanged(const QColor &c);
@@ -137,7 +138,7 @@ private:
     QComboBox *comboStyle;
     QFontComboBox *comboFont;
     QComboBox *comboSize;
-
+    editProfile *profile;
     QToolBar *tb;
     QString fileName;
     QTextEdit *textEdit;

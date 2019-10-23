@@ -32,13 +32,17 @@ loginDialog::loginDialog(QWidget *parent)
             this, SLOT(loginClicked()));
     connect(cancelButton, SIGNAL(clicked()),
             this, SLOT(cancelClicked()));
-
+    QVBoxLayout *layout = new QVBoxLayout();
     QFormLayout *loginForm = new QFormLayout;
     loginForm->addRow(username, usernameEdit);
     loginForm->addRow(password, passwordEdit);
-    loginForm->addWidget(buttonBox);
-    loginForm->addWidget(newProfileButton);
-    setLayout(loginForm);
+    layout->addLayout(loginForm);
+    layout->addSpacing(15);
+    layout->addWidget(buttonBox);
+    layout->setAlignment(buttonBox, Qt::AlignCenter);
+    layout->addWidget(newProfileButton);
+    layout->setAlignment(newProfileButton, Qt::AlignLeft);
+    setLayout(layout);
     setFixedSize(sizeHint());
     setWindowFlags(Qt::CustomizeWindowHint | Qt::WindowTitleHint);
 }
@@ -49,6 +53,15 @@ void loginDialog::loginClicked(){
     //Implement interface to send data to server
     if(true)
     {
+        if(!QFile(QStandardPaths::writableLocation(QStandardPaths::DocumentsLocation)+"/CollaborativeEditor/usrData/settings.profile").exists()){
+            QFile settings(QStandardPaths::writableLocation(QStandardPaths::DocumentsLocation)+"/CollaborativeEditor/usrData/settings.profile");
+            settings.open(QIODevice::WriteOnly | QIODevice::Text);
+            QTextStream out(&settings);
+            out << "" << endl;
+            out << username << endl;
+            out << "" << endl;
+            settings.close();
+        }
         emit loginSuccessful();
         close();
     }
