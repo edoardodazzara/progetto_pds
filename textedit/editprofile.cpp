@@ -15,7 +15,7 @@ editProfile::editProfile(QWidget *parent)
     userPic->setBackgroundRole(QPalette::Dark);
     userPic->setScaledContents(false);
     profilePic = new QPixmap();
-    profilePic->load(rsrc+"/profile-empty-pic.png");
+
     userPic->setPixmap(*profilePic);
     username->setBuddy(usernameEdit);
     nickname->setBuddy(usernameEdit);
@@ -39,9 +39,14 @@ editProfile::editProfile(QWidget *parent)
             nickEdit->setStyleSheet("QLineEdit {color: #636363;}");
             nickEdit->setText(tr("(Optional)"));
         }
-        profilePic->load(QStandardPaths::writableLocation(QStandardPaths::DocumentsLocation)+"/CollaborativeEditor/usrData/"+proPicName);
-        QPixmap scaled = profilePic->scaled(147, 200, Qt::AspectRatioMode::KeepAspectRatio);
-        userPic->setPixmap(scaled);
+        if(proPicName.isEmpty() || proPicName.isNull()){
+                profilePic->load(rsrc+"/profile-empty-pic.png");
+                userPic->setPixmap(*profilePic);
+        }else{
+            profilePic->load(QStandardPaths::writableLocation(QStandardPaths::DocumentsLocation)+"/CollaborativeEditor/usrData/"+proPicName);
+            QPixmap scaled = profilePic->scaled(147, 200, Qt::AspectRatioMode::KeepAspectRatio);
+            userPic->setPixmap(scaled);
+        }
     }
 
     save = new QPushButton(tr("&Save"));
@@ -207,8 +212,31 @@ void editProfile::imageUnhovered(){
     QString proPicName = settings.readLine();
     proPicName.resize(proPicName.size() - 2);
     settings.close();
-    profilePic->load(QStandardPaths::writableLocation(QStandardPaths::DocumentsLocation)+"/CollaborativeEditor/usrData/"+proPicName);
-    QPixmap scaled = profilePic->scaled(147, 200, Qt::AspectRatioMode::KeepAspectRatio);
-    userPic->setPixmap(scaled);
+    QString proPicName2;
+    if(QFile(QStandardPaths::writableLocation(QStandardPaths::DocumentsLocation)+"/CollaborativeEditor/usrData/settings.profile.temp").exists()){
+        QFile settings2(QStandardPaths::writableLocation(QStandardPaths::DocumentsLocation)+"/CollaborativeEditor/usrData/settings.profile.temp");
+        settings2.open(QIODevice::ReadOnly);
+        proPicName2 = settings2.readLine();
+        proPicName2.resize(proPicName2.size() - 2);
+        settings2.close();
+    }
+    if((proPicName.isEmpty() || proPicName.isNull())&&((proPicName2.isEmpty() || proPicName2.isNull()))){
+            profilePic->load(rsrc+"/profile-empty-pic.png");
+            userPic->setPixmap(*profilePic);
+    }else{
+        if(proPicName2.isEmpty() || proPicName2.isNull()){
+            profilePic->load(QStandardPaths::writableLocation(QStandardPaths::DocumentsLocation)+"/CollaborativeEditor/usrData/"+proPicName);
+            QPixmap scaled = profilePic->scaled(147, 200, Qt::AspectRatioMode::KeepAspectRatio);
+            userPic->setPixmap(scaled);
+        }else{
+            profilePic->load(QStandardPaths::writableLocation(QStandardPaths::DocumentsLocation)+"/CollaborativeEditor/usrData/"+proPicName2);
+            QPixmap scaled = profilePic->scaled(147, 200, Qt::AspectRatioMode::KeepAspectRatio);
+            userPic->setPixmap(scaled);
+        }
+
+    }
+//    profilePic->load(QStandardPaths::writableLocation(QStandardPaths::DocumentsLocation)+"/CollaborativeEditor/usrData/"+proPicName);
+//    QPixmap scaled = profilePic->scaled(147, 200, Qt::AspectRatioMode::KeepAspectRatio);
+//    userPic->setPixmap(scaled);
 
 }
