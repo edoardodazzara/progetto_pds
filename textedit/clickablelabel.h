@@ -3,20 +3,30 @@
 
 #include <QLabel>
 #include <QWidget>
+#include <QEvent>
+#include <QHoverEvent>
 #include <Qt>
 
 class ClickableLabel : public QLabel {
     Q_OBJECT
 
 public:
-    explicit ClickableLabel(QWidget* parent = Q_NULLPTR, Qt::WindowFlags f = Qt::WindowFlags());
+    explicit ClickableLabel(QWidget* parent = 0);
     ~ClickableLabel();
 
-signals:
-    void clicked();
 
 protected:
     void mousePressEvent(QMouseEvent* event);
+    void hoverEnter(QHoverEvent *event);
+    void hoverLeave(QHoverEvent *event);
+    bool event(QEvent *event);
+
+signals:
+    void clicked();
+    void hovered();
+    void unHovered();
+
+
 
 };
 

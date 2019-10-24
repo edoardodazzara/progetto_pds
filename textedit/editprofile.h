@@ -25,12 +25,14 @@ class editProfile:public QDialog
     Q_OBJECT
 public:
     editProfile(QWidget *parent = 0);
-    void edit();
+
 private slots:
     void savePressed();
     void discardPressed();
     void selectImagePressed();
-\
+    void changedNick(const QString &);
+    void imageHovered();
+    void imageUnhovered();
 
 private:
     const QString rsrc = ":/images/win";

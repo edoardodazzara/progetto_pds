@@ -40,7 +40,7 @@ editProfile::editProfile(QWidget *parent)
             nickEdit->setText(tr("(Optional)"));
         }
         profilePic->load(QStandardPaths::writableLocation(QStandardPaths::DocumentsLocation)+"/CollaborativeEditor/usrData/"+proPicName);
-        QPixmap scaled = profilePic->scaled(120, 200, Qt::AspectRatioMode::KeepAspectRatio);
+        QPixmap scaled = profilePic->scaled(147, 200, Qt::AspectRatioMode::KeepAspectRatio);
         userPic->setPixmap(scaled);
     }
 
@@ -66,12 +66,43 @@ editProfile::editProfile(QWidget *parent)
     connect(discard, SIGNAL(clicked()), this, SLOT(discardPressed()));
     connect(save, SIGNAL(clicked()), this, SLOT(savePressed()));
     connect(userPic, SIGNAL(clicked()), this, SLOT(selectImagePressed()));
+    connect(nickEdit, SIGNAL(textEdited(const QString &)), this, SLOT(changedNick(const QString &)));
+    connect(userPic, SIGNAL(hovered()), this, SLOT(imageHovered()));
+    connect(userPic, SIGNAL(unHovered()), this, SLOT(imageUnhovered()));
 
 
 }
 
-void edit(){
+void editProfile::changedNick(const QString &){
 
+   QString nick = nickEdit ->text();
+   nickEdit->setStyleSheet("QLineEdit {color: #000000;}");
+   if(!nick.isEmpty()){
+        if(QFile(QStandardPaths::writableLocation(QStandardPaths::DocumentsLocation)+"/CollaborativeEditor/usrData/settings.profile.temp").exists()){
+
+                QFile settings(QStandardPaths::writableLocation(QStandardPaths::DocumentsLocation)+"/CollaborativeEditor/usrData/settings.profile.temp");
+                settings.open(QIODevice::ReadWrite | QIODevice::Text);
+                QString imageName = settings.readLine();
+                QString username = settings.readLine();
+                settings.resize(0);
+                QTextStream out(&settings);
+                out << imageName;
+                out << username;
+                out << nick << endl;
+                settings.close();
+                nickEdit->setText(nick);
+
+            }else{
+                QFile settings(QStandardPaths::writableLocation(QStandardPaths::DocumentsLocation)+"/CollaborativeEditor/usrData/settings.profile.temp");
+                settings.open(QIODevice::WriteOnly | QIODevice::Text);
+                QTextStream out(&settings);
+                out << "" << endl;
+                out << "" << endl;
+                out << nick << endl;
+                settings.close();
+                nickEdit->setText(nick);
+            }
+    }
 }
 
 void editProfile::savePressed(){
@@ -127,38 +158,57 @@ void editProfile::selectImagePressed(){
     QString imagePath = imageUrl.path();
     imagePath.remove(0,1);
     QString imageName = imageUrl.fileName();
-    if(QDir(QStandardPaths::writableLocation(QStandardPaths::DocumentsLocation)+"/CollaborativeEditor/usrData/").exists()){
-        QFile::copy(imagePath, QStandardPaths::writableLocation(QStandardPaths::DocumentsLocation)+"/CollaborativeEditor/usrData/"+imageName);
-    }else{
-        QDir().mkdir(QStandardPaths::writableLocation(QStandardPaths::DocumentsLocation)+"/CollaborativeEditor/usrData/");
-        QFile::copy(imagePath, QStandardPaths::writableLocation(QStandardPaths::DocumentsLocation)+"/CollaborativeEditor/usrData/"+imageName);
+    if(!imagePath.isEmpty() || !imagePath.isNull()){
+        if(QDir(QStandardPaths::writableLocation(QStandardPaths::DocumentsLocation)+"/CollaborativeEditor/usrData/").exists()){
+            QFile::copy(imagePath, QStandardPaths::writableLocation(QStandardPaths::DocumentsLocation)+"/CollaborativeEditor/usrData/"+imageName);
+        }else{
+            QDir().mkdir(QStandardPaths::writableLocation(QStandardPaths::DocumentsLocation)+"/CollaborativeEditor/usrData/");
+            QFile::copy(imagePath, QStandardPaths::writableLocation(QStandardPaths::DocumentsLocation)+"/CollaborativeEditor/usrData/"+imageName);
+        }
+        if(QFile(QStandardPaths::writableLocation(QStandardPaths::DocumentsLocation)+"/CollaborativeEditor/usrData/settings.profile.temp").exists()){
+
+            QFile settings(QStandardPaths::writableLocation(QStandardPaths::DocumentsLocation)+"/CollaborativeEditor/usrData/settings.profile.temp");
+            settings.open(QIODevice::ReadWrite | QIODevice::Text);
+            settings.readLine();
+            QString username = settings.readLine();
+            QString nickname = settings.readLine();
+            settings.resize(0);
+            QTextStream out(&settings);
+            out << imageName << endl;
+            out << username << endl;
+            out << nickname << endl;
+            settings.close();
+
+        }else{
+            QFile settings(QStandardPaths::writableLocation(QStandardPaths::DocumentsLocation)+"/CollaborativeEditor/usrData/settings.profile.temp");
+            settings.open(QIODevice::WriteOnly | QIODevice::Text);
+            QTextStream out(&settings);
+            out << imageName << endl;
+            out << "" << endl;
+            out << "" << endl;
+            settings.close();
+        }
+
+        profilePic->load(QStandardPaths::writableLocation(QStandardPaths::DocumentsLocation)+"/CollaborativeEditor/usrData/"+imageName);
+        QPixmap scaled = profilePic->scaled(147, 200, Qt::AspectRatioMode::KeepAspectRatio);
+        userPic->setPixmap(scaled);
     }
-    if(QFile(QStandardPaths::writableLocation(QStandardPaths::DocumentsLocation)+"/CollaborativeEditor/usrData/settings.profile.temp").exists()){
+}
 
-        QFile settings(QStandardPaths::writableLocation(QStandardPaths::DocumentsLocation)+"/CollaborativeEditor/usrData/settings.profile.temp");
-        settings.open(QIODevice::ReadWrite | QIODevice::Text);
-        settings.readLine();
-        QString username = settings.readLine();
-        QString nickname = settings.readLine();
-        settings.resize(0);
-        QTextStream out(&settings);
-        out << imageName << endl;
-        out << username << endl;
-        out << nickname << endl;
-        settings.close();
+void editProfile::imageHovered(){
+    profilePic->load(rsrc+"/add-profile-image.png");
+    //QPixmap scaled = profilePic->scaled(120, 200, Qt::AspectRatioMode::KeepAspectRatio);
+    userPic->setPixmap(*profilePic);
+}
 
-    }else{
-        QFile settings(QStandardPaths::writableLocation(QStandardPaths::DocumentsLocation)+"/CollaborativeEditor/usrData/settings.profile.temp");
-        settings.open(QIODevice::WriteOnly | QIODevice::Text);
-        QTextStream out(&settings);
-        out << imageName << endl;
-        out << "" << endl;
-        out << "" << endl;
-        settings.close();
-    }
-
-    profilePic->load(QStandardPaths::writableLocation(QStandardPaths::DocumentsLocation)+"/CollaborativeEditor/usrData/"+imageName);
-    QPixmap scaled = profilePic->scaled(120, 200, Qt::AspectRatioMode::KeepAspectRatio);
+void editProfile::imageUnhovered(){
+    QFile settings(QStandardPaths::writableLocation(QStandardPaths::DocumentsLocation)+"/CollaborativeEditor/usrData/settings.profile");
+    settings.open(QIODevice::ReadOnly);
+    QString proPicName = settings.readLine();
+    proPicName.resize(proPicName.size() - 2);
+    settings.close();
+    profilePic->load(QStandardPaths::writableLocation(QStandardPaths::DocumentsLocation)+"/CollaborativeEditor/usrData/"+proPicName);
+    QPixmap scaled = profilePic->scaled(147, 200, Qt::AspectRatioMode::KeepAspectRatio);
     userPic->setPixmap(scaled);
 
 }
