@@ -32,6 +32,8 @@ loginDialog::loginDialog(QWidget *parent)
             this, SLOT(loginClicked()));
     connect(cancelButton, SIGNAL(clicked()),
             this, SLOT(cancelClicked()));
+    connect(newProfileButton, SIGNAL(clicked()), this, SLOT(registerClicked()));
+
     QVBoxLayout *layout = new QVBoxLayout();
     QFormLayout *loginForm = new QFormLayout;
     loginForm->addRow(username, usernameEdit);
@@ -75,5 +77,10 @@ void loginDialog::cancelClicked(){
 
 void loginDialog::enableLoginButton(const QString &text){
     loginButton->setEnabled(!text.isEmpty());
+}
+
+void loginDialog::registerClicked(){
+    newProfile = new newProfileDialog();
+    newProfile->show();
 }
 

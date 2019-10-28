@@ -3,6 +3,7 @@
 
 #include <QDialog>
 #include <QVBoxLayout>
+#include "newprofiledialog.h"
 
 class QLabel;
 class QLineEdit;
@@ -17,6 +18,7 @@ private slots:
     void loginClicked();
     void cancelClicked();
     void enableLoginButton(const QString &text);
+    void registerClicked();
 
 signals:
     void loginSuccessful();
@@ -30,6 +32,7 @@ private:
     QPushButton *loginButton;
     QPushButton *cancelButton;
     QPushButton *newProfileButton;
+    newProfileDialog *newProfile;
 
 };
 
