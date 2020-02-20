@@ -92,6 +92,18 @@
 		<Unit filename="/Users/Lorenzo/Desktop/progetto_pds/SERVER/Char.h">
 			<Option target="PROGETTO"/>
 		</Unit>
+		<Unit filename="/Users/Lorenzo/Desktop/progetto_pds/SERVER/Identifier.cpp">
+			<Option target="PROGETTO"/>
+		</Unit>
+		<Unit filename="/Users/Lorenzo/Desktop/progetto_pds/SERVER/Identifier.h">
+			<Option target="PROGETTO"/>
+		</Unit>
+		<Unit filename="/Users/Lorenzo/Desktop/progetto_pds/SERVER/NetworkController.cpp">
+			<Option target="PROGETTO"/>
+		</Unit>
+		<Unit filename="/Users/Lorenzo/Desktop/progetto_pds/SERVER/NetworkController.h">
+			<Option target="PROGETTO"/>
+		</Unit>
 		<Unit filename="/Users/Lorenzo/Desktop/progetto_pds/SERVER/main.cpp">
 			<Option target="PROGETTO"/>
 		</Unit>

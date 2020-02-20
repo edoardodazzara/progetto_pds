@@ -177,6 +177,60 @@ Char.cpp.s:
 	$(MAKE) -f CMakeFiles/PROGETTO.dir/build.make CMakeFiles/PROGETTO.dir/Char.cpp.s
 .PHONY : Char.cpp.s
 
+Identifier.o: Identifier.cpp.o
+
+.PHONY : Identifier.o
+
+# target to build an object file
+Identifier.cpp.o:
+	$(MAKE) -f CMakeFiles/PROGETTO.dir/build.make CMakeFiles/PROGETTO.dir/Identifier.cpp.o
+.PHONY : Identifier.cpp.o
+
+Identifier.i: Identifier.cpp.i
+
+.PHONY : Identifier.i
+
+# target to preprocess a source file
+Identifier.cpp.i:
+	$(MAKE) -f CMakeFiles/PROGETTO.dir/build.make CMakeFiles/PROGETTO.dir/Identifier.cpp.i
+.PHONY : Identifier.cpp.i
+
+Identifier.s: Identifier.cpp.s
+
+.PHONY : Identifier.s
+
+# target to generate assembly for a file
+Identifier.cpp.s:
+	$(MAKE) -f CMakeFiles/PROGETTO.dir/build.make CMakeFiles/PROGETTO.dir/Identifier.cpp.s
+.PHONY : Identifier.cpp.s
+
+NetworkController.o: NetworkController.cpp.o
+
+.PHONY : NetworkController.o
+
+# target to build an object file
+NetworkController.cpp.o:
+	$(MAKE) -f CMakeFiles/PROGETTO.dir/build.make CMakeFiles/PROGETTO.dir/NetworkController.cpp.o
+.PHONY : NetworkController.cpp.o
+
+NetworkController.i: NetworkController.cpp.i
+
+.PHONY : NetworkController.i
+
+# target to preprocess a source file
+NetworkController.cpp.i:
+	$(MAKE) -f CMakeFiles/PROGETTO.dir/build.make CMakeFiles/PROGETTO.dir/NetworkController.cpp.i
+.PHONY : NetworkController.cpp.i
+
+NetworkController.s: NetworkController.cpp.s
+
+.PHONY : NetworkController.s
+
+# target to generate assembly for a file
+NetworkController.cpp.s:
+	$(MAKE) -f CMakeFiles/PROGETTO.dir/build.make CMakeFiles/PROGETTO.dir/NetworkController.cpp.s
+.PHONY : NetworkController.cpp.s
+
 main.o: main.cpp.o
 
 .PHONY : main.o
@@ -219,6 +273,12 @@ help:
 	@echo "... Char.o"
 	@echo "... Char.i"
 	@echo "... Char.s"
+	@echo "... Identifier.o"
+	@echo "... Identifier.i"
+	@echo "... Identifier.s"
+	@echo "... NetworkController.o"
+	@echo "... NetworkController.i"
+	@echo "... NetworkController.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

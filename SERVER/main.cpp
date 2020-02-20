@@ -1,14 +1,31 @@
 #include <iostream>
 #include "Char.h"
+#include "CRDT.h"
+#include "NetworkController.h"
+
 
 int main() {
-    std::vector<int> v1;
-    v1.push_back(0);
-    Char *c1 = new Char(0,0,v1,'c');
-    std::vector<int> v2;
-    v2.push_back(1);
-    Char *c2 = new Char(1,0,v2,'i');
-    int i=c1->compareTo(*c2);
-    std::cout<<i;
+    CRDT* alg = new CRDT(1);
+    alg->localInsert('a',0);
+    std::cout<<alg->text+"\n";
+    alg->localInsert('b',1);
+    std::cout<<alg->text+"\n";
+    alg->localInsert('c',1);
+    std::cout<<alg->text+"\n";
+    alg->localErase(1);
+    std::cout<<alg->text+"\n";
+    alg->localErase(0);
+    std::cout<<alg->text+"\n";
+
+    Identifier* id1 = new Identifier(3,1);
+    std::vector<Identifier*> pos1;
+    pos1.push_back(id1);
+    Char* ch = new Char(1,alg->counter,pos1,'z');
+    alg->remoteInsert(ch);
+    std::cout<<alg->text+"\n";
+
+    alg->remoteDelete(ch);
+    std::cout<<alg->text+"\n";
+
     return 0;
 }

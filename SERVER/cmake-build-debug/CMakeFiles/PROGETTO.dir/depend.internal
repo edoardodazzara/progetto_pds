@@ -5,9 +5,20 @@ CMakeFiles/PROGETTO.dir/CRDT.cpp.o
  /Users/Lorenzo/Desktop/progetto_pds/SERVER/CRDT.cpp
  /Users/Lorenzo/Desktop/progetto_pds/SERVER/CRDT.h
  /Users/Lorenzo/Desktop/progetto_pds/SERVER/Char.h
+ /Users/Lorenzo/Desktop/progetto_pds/SERVER/Identifier.h
 CMakeFiles/PROGETTO.dir/Char.cpp.o
  /Users/Lorenzo/Desktop/progetto_pds/SERVER/Char.cpp
  /Users/Lorenzo/Desktop/progetto_pds/SERVER/Char.h
+ /Users/Lorenzo/Desktop/progetto_pds/SERVER/Identifier.h
+CMakeFiles/PROGETTO.dir/Identifier.cpp.o
+ /Users/Lorenzo/Desktop/progetto_pds/SERVER/Identifier.cpp
+ /Users/Lorenzo/Desktop/progetto_pds/SERVER/Identifier.h
+CMakeFiles/PROGETTO.dir/NetworkController.cpp.o
+ /Users/Lorenzo/Desktop/progetto_pds/SERVER/NetworkController.cpp
+ /Users/Lorenzo/Desktop/progetto_pds/SERVER/NetworkController.h
 CMakeFiles/PROGETTO.dir/main.cpp.o
+ /Users/Lorenzo/Desktop/progetto_pds/SERVER/CRDT.h
  /Users/Lorenzo/Desktop/progetto_pds/SERVER/Char.h
+ /Users/Lorenzo/Desktop/progetto_pds/SERVER/Identifier.h
+ /Users/Lorenzo/Desktop/progetto_pds/SERVER/NetworkController.h
  /Users/Lorenzo/Desktop/progetto_pds/SERVER/main.cpp

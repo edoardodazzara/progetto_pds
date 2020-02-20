@@ -7,18 +7,21 @@
 
 
 #include <vector>
+#include "Identifier.h"
 
 class Char {
 
 private:
     int siteId;
     int counter;
-    std::vector<int> position;
+    std::vector<Identifier*> position;
     char value;
 
 public:
-    Char(int siteId, int counter, std::vector<int> position, char value);
+    Char(int siteId, int counter, std::vector<Identifier*> position, char value);
     int compareTo(Char other);
+    std::vector<Identifier*> getPos();
+    char getValue();
 };
 
 

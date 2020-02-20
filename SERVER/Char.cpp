@@ -5,7 +5,7 @@
 #include "Char.h"
 
 
-Char::Char(int siteId, int counter, std::vector<int> position, char value):
+Char::Char(int siteId, int counter, std::vector<Identifier*> position, char value):
 siteId(siteId), counter(counter),position(position),value(value) {}
 
 /*METHOD compareTo: prende i due Char e confronta le due posizioni
@@ -20,9 +20,9 @@ int Char::compareTo(Char other) {
         auto id1=pos1[i];
         auto id2=pos2[i];
 
-        if (id1<id2)
+        if (id1->getDigit()<id2->getDigit())
             return -1;
-        else if (id1>id2)
+        else if (id1->getDigit()>id2->getDigit())
             return 1;
     }
 
@@ -36,3 +36,10 @@ int Char::compareTo(Char other) {
     }
 }
 
+std::vector<Identifier*> Char::getPos() {
+    return this->position;
+}
+
+char Char::getValue() {
+    return value;
+}

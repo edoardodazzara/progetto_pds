@@ -4,10 +4,21 @@
 CMakeFiles/PROGETTO.dir/CRDT.cpp.o: ../CRDT.cpp
 CMakeFiles/PROGETTO.dir/CRDT.cpp.o: ../CRDT.h
 CMakeFiles/PROGETTO.dir/CRDT.cpp.o: ../Char.h
+CMakeFiles/PROGETTO.dir/CRDT.cpp.o: ../Identifier.h
 
 CMakeFiles/PROGETTO.dir/Char.cpp.o: ../Char.cpp
 CMakeFiles/PROGETTO.dir/Char.cpp.o: ../Char.h
+CMakeFiles/PROGETTO.dir/Char.cpp.o: ../Identifier.h
 
+CMakeFiles/PROGETTO.dir/Identifier.cpp.o: ../Identifier.cpp
+CMakeFiles/PROGETTO.dir/Identifier.cpp.o: ../Identifier.h
+
+CMakeFiles/PROGETTO.dir/NetworkController.cpp.o: ../NetworkController.cpp
+CMakeFiles/PROGETTO.dir/NetworkController.cpp.o: ../NetworkController.h
+
+CMakeFiles/PROGETTO.dir/main.cpp.o: ../CRDT.h
 CMakeFiles/PROGETTO.dir/main.cpp.o: ../Char.h
+CMakeFiles/PROGETTO.dir/main.cpp.o: ../Identifier.h
+CMakeFiles/PROGETTO.dir/main.cpp.o: ../NetworkController.h
 CMakeFiles/PROGETTO.dir/main.cpp.o: ../main.cpp
 

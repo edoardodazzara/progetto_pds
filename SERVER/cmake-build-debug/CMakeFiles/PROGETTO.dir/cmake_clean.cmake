@@ -2,6 +2,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/PROGETTO.dir/main.cpp.o"
   "CMakeFiles/PROGETTO.dir/CRDT.cpp.o"
   "CMakeFiles/PROGETTO.dir/Char.cpp.o"
+  "CMakeFiles/PROGETTO.dir/Identifier.cpp.o"
+  "CMakeFiles/PROGETTO.dir/NetworkController.cpp.o"
   "PROGETTO.pdb"
   "PROGETTO"
 )
