@@ -102,11 +102,13 @@ TextEdit::TextEdit(QWidget *parent)
 #endif
     setWindowTitle(QCoreApplication::applicationName());
 
+    cursorMap = new QMap<QString, QTextCursor>();
     textEdit = new QTextEdit(this);
     connect(textEdit, &QTextEdit::currentCharFormatChanged,
             this, &TextEdit::currentCharFormatChanged);
     connect(textEdit, &QTextEdit::cursorPositionChanged,
             this, &TextEdit::cursorPositionChanged);
+    connect(textEdit, SIGNAL(cursorPositionChanged()), this, SLOT(cursorMoved()));
     setCentralWidget(textEdit);
 
     setToolButtonStyle(Qt::ToolButtonFollowStyle);
@@ -118,6 +120,12 @@ TextEdit::TextEdit(QWidget *parent)
         QMenu *helpMenu = menuBar()->addMenu(tr("Help"));
         helpMenu->addAction(tr("About"), this, &TextEdit::about);
         helpMenu->addAction(tr("About &Qt"), qApp, &QApplication::aboutQt);
+    }
+
+    {
+        connectedUsers = menuBar()->addMenu(tr("Connected Users"));
+
+
     }
 
     QFont textFont("Helvetica");
@@ -792,3 +800,59 @@ void TextEdit::launchProfileEditor(){
     profile = new editProfile();
     profile->show();
 }
+
+void TextEdit::cursorMoved(){
+    cursor = new QTextCursor(textEdit->textCursor());
+    //TODO interfaccia per mandare al server i dati relativi al mio cursore
+    int position = cursor->position();
+
+}
+
+void TextEdit::remoteUserConnected(QString username){
+//    if(QFile (QStandardPaths::writableLocation(QStandardPaths::DocumentsLocation)+"/CollaborativeEditor/remoteUsers").exists()){
+//        QFile remoteUsers(QStandardPaths::writableLocation(QStandardPaths::DocumentsLocation)+"/CollaborativeEditor/remoteUsers");
+//        remoteUsers.open(QIODevice::ReadWrite | QIODevice::Text |QIODevice::Append);
+//        QTextStream out(&remoteUsers);
+//        QColor cursorColor = QColor::fromRgb(QRandomGenerator::global()->generate());
+//        out << username +";" + cursorColor.name() << endl;
+//        remoteUsers.close();
+//        QTextCursor *cursor = new QTextCursor();
+//        cursor->setPosition(0);
+        if(!cursorMap->contains(username)){
+            QTextCursor *cursor = new QTextCursor();
+            cursor->setPosition(0);
+            cursorMap->insert(username, *cursor);
+            connectedUsers->addAction(username);
+            connectedUsers->show();
+            textEdit->setTextCursor(*cursor);
+            textEdit->repaint();
+        }
+}
+
+void TextEdit::remoteUserDisconnected(QString username){
+    QMap<QString, QTextCursor>::iterator i;
+    for(i = cursorMap->begin(); i != cursorMap->end(); ++i){
+        if(i.key().compare(username) == 0){
+            cursorMap->erase(i);
+            break;
+        }
+        connectedUsers->clear();
+        QMapIterator<QString, QTextCursor> iterator(*cursorMap);
+        while(iterator.hasNext()){
+            connectedUsers->addAction(iterator.next().key());
+        }
+        textEdit->repaint();
+    }
+}
+
+void TextEdit::remoteCursorMoved(QString username, int pos){
+    if(cursorMap->contains(username)){
+        QTextCursor *cursor = new QTextCursor(cursorMap->take(username));
+        cursor->setPosition(pos);
+        cursorMap->insert(username, *cursor);
+        //TODO interfaccia per ricevere i dati dal server relativi ai cursori degli altri utenti attivi sul documento
+    }
+
+}
+
+

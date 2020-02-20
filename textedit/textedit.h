@@ -54,6 +54,12 @@
 #include <QMainWindow>
 #include <QMap>
 #include <QPointer>
+#include <QFile>
+#include <QTextStream>
+#include <QStandardPaths>
+#include <QMap>
+#include <QColor>
+#include <QMapIterator>
 #include "editprofile.h"
 
 QT_BEGIN_NAMESPACE
@@ -78,6 +84,7 @@ public:
 public slots:
     void fileNew();
     void successfulLogin();
+    void cursorMoved();
 
 protected:
     void closeEvent(QCloseEvent *e) override;
@@ -117,6 +124,9 @@ private:
     void fontChanged(const QFont &f);
     void colorChanged(const QColor &c);
     void alignmentChanged(Qt::Alignment a);
+    void remoteUserConnected(QString username);
+    void remoteCursorMoved(QString username, int pos);
+    void remoteUserDisconnected(QString username);
 
     QAction *actionSave;
     QAction *actionTextBold;
@@ -140,8 +150,11 @@ private:
     QComboBox *comboSize;
     editProfile *profile;
     QToolBar *tb;
+    QMenu *connectedUsers;
     QString fileName;
     QTextEdit *textEdit;
+    QTextCursor *cursor;
+    QMap<QString, QTextCursor> *cursorMap;
 };
 
 #endif // TEXTEDIT_H

@@ -8,12 +8,14 @@ TARGET          = textedit
 HEADERS         = textedit.h \
     clickablelabel.h \
     editprofile.h \
-    loginDialog.h
+    loginDialog.h \
+    newprofiledialog.h
 SOURCES         = textedit.cpp \
                   clickablelabel.cpp \
                   editprofile.cpp \
                   loginDialog.cpp \
-                  main.cpp
+                  main.cpp \
+                  newprofiledialog.cpp
 
 RESOURCES += textedit.qrc
 build_all:!build_pass {
